@@ -1,0 +1,176 @@
+-- phpMyAdmin SQL Dump
+-- version 5.1.1
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Generation Time: Jul 27, 2022 at 07:53 PM
+-- Server version: 10.4.22-MariaDB
+-- PHP Version: 7.3.33
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `bukutamu`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_bukutamu`
+--
+
+CREATE TABLE `tbl_bukutamu` (
+  `id_tamu` int(11) NOT NULL,
+  `tanggal` date NOT NULL,
+  `no_identitas` varchar(16) NOT NULL,
+  `nama` varchar(30) NOT NULL,
+  `alamat` varchar(200) NOT NULL,
+  `jenis_kelamin` varchar(10) NOT NULL,
+  `no_telp` varchar(16) NOT NULL,
+  `instansi` varchar(200) NOT NULL,
+  `keperluan` varchar(255) NOT NULL,
+  `jam_datang` time NOT NULL,
+  `jam_keluar` time NOT NULL,
+  `bertemu` varchar(200) NOT NULL,
+  `status` varchar(15) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tbl_bukutamu`
+--
+
+INSERT INTO `tbl_bukutamu` (`id_tamu`, `tanggal`, `no_identitas`, `nama`, `alamat`, `jenis_kelamin`, `no_telp`, `instansi`, `keperluan`, `jam_datang`, `jam_keluar`, `bertemu`, `status`) VALUES
+(7, '2022-07-27', '3215010209960002', 'Yogi Hermawan', 'Karawang', 'Laki-Laki', '081316803951', '-', 'Psikotes', '08:00:00', '00:00:00', '112244 - ASEP - HRD', 'Belum Selesai'),
+(8, '2022-07-27', '3215066105950001', 'Dini Handayani', 'Karawang', 'Perempuan', '085880888220', '-', 'Psikotes', '08:15:00', '00:00:00', '112244 - ASEP - HRD', 'Belum Selesai');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_pegawai`
+--
+
+CREATE TABLE `tbl_pegawai` (
+  `id_pegawai` int(11) NOT NULL,
+  `unit_kerja` varchar(30) NOT NULL,
+  `nip` varchar(10) NOT NULL,
+  `nama` varchar(30) NOT NULL,
+  `no_telp` varchar(16) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tbl_pegawai`
+--
+
+INSERT INTO `tbl_pegawai` (`id_pegawai`, `unit_kerja`, `nip`, `nama`, `no_telp`) VALUES
+(2, 'HRD', '112244', 'ASEP', '081316803951'),
+(3, 'HRIS', '123456', 'MUBAROK', '085778886774');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_unitkerja`
+--
+
+CREATE TABLE `tbl_unitkerja` (
+  `id_unitkerja` int(11) NOT NULL,
+  `unit_kerja` varchar(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tbl_unitkerja`
+--
+
+INSERT INTO `tbl_unitkerja` (`id_unitkerja`, `unit_kerja`) VALUES
+(1, 'HRD'),
+(5, 'HRIS');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_user`
+--
+
+CREATE TABLE `tbl_user` (
+  `id_user` int(11) NOT NULL,
+  `nama` varchar(30) NOT NULL,
+  `level` varchar(20) NOT NULL,
+  `username` varchar(15) NOT NULL,
+  `password` varchar(32) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tbl_user`
+--
+
+INSERT INTO `tbl_user` (`id_user`, `nama`, `level`, `username`, `password`) VALUES
+(1, 'ADMIN', 'Administrator', 'admin', '21232f297a57a5a743894a0e4a801fc3'),
+(5, 'USER', 'Users', 'user', 'ee11cbb19052e40b07aac0ca060c23ee');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `tbl_bukutamu`
+--
+ALTER TABLE `tbl_bukutamu`
+  ADD PRIMARY KEY (`id_tamu`);
+
+--
+-- Indexes for table `tbl_pegawai`
+--
+ALTER TABLE `tbl_pegawai`
+  ADD PRIMARY KEY (`id_pegawai`);
+
+--
+-- Indexes for table `tbl_unitkerja`
+--
+ALTER TABLE `tbl_unitkerja`
+  ADD PRIMARY KEY (`id_unitkerja`);
+
+--
+-- Indexes for table `tbl_user`
+--
+ALTER TABLE `tbl_user`
+  ADD PRIMARY KEY (`id_user`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `tbl_bukutamu`
+--
+ALTER TABLE `tbl_bukutamu`
+  MODIFY `id_tamu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
+-- AUTO_INCREMENT for table `tbl_pegawai`
+--
+ALTER TABLE `tbl_pegawai`
+  MODIFY `id_pegawai` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `tbl_unitkerja`
+--
+ALTER TABLE `tbl_unitkerja`
+  MODIFY `id_unitkerja` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `tbl_user`
+--
+ALTER TABLE `tbl_user`
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

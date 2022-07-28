@@ -1,0 +1,29 @@
+/*
+Go Software Media Project 2016
+http://gosoftware.web.id
+http://phpbego.wordpress.com
+Email: cs@gosoftware.web.id
+*/
+/* 
+    Created on : Apr 6, 2016, 8:21:37 PM
+    Author     : Suendri
+*/
+
+body{
+    background:#d9e0e7;
+}
+
+.content-utama {
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 4px;
+    border : 1px solid #cfe3ed;
+    z-index: auto;
+    margin-bottom: 10px;
+    min-height: 100px;
+}
+
+.content-wrapper,
+.right-side {
+  background-color: #d9e0e7 !important;
+}

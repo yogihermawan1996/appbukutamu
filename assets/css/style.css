@@ -1,0 +1,35 @@
+body{
+	color:#222;	
+	font-family: 'lucida grande',tahoma,verdana,arial,sans-serif;
+	font-size:14px;
+	background-color:#d9e0e7;
+}
+
+.top{
+	background-color:#3c8dbc;
+	font-size:20px;
+	font-weight:bold;
+	color:#fff;
+	padding : 5px;
+	margin-bottom: 6px;
+	border-bottom: 6px solid #CCC;
+}
+
+h4 {
+	margin-top: -4px;
+}
+h5 {
+	margin-top: -4px;
+}
+
+.box{
+	margin:20px 0px;
+	background-color:#fff;
+	padding: 20px;
+	border-radius: 4px;
+}
+.box img {
+	width: 100%;
+	padding: 2px;
+	border-radius: 4px;
+}
